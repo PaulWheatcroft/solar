@@ -48,6 +48,47 @@ body {
   font-size: 12px;
 }
 
+/* Modal hidden by default */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Show modal when targeted */
+:target.modal {
+  display: block;
+}
+
+/* Modal content styling */
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+  width: 40%;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 59, 59, 0.3);
+}
+
+.close {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(255, 255, 255);
+}
+
 @keyframes zoom-in {
   0% {
     transform: translateY(-50%) scale(0);

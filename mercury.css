@@ -1,12 +1,33 @@
-.sun {
+/* .sun {
   position: absolute;
   top: 50%;
   left: 10%;
   width: 800px;
   height: 800px;
   background-color: #ff9900;
+  box-shadow: 0 0 50px #ff9900;
+  border: 4px solid #ffb700;
   border-radius: 50%;
   animation: flicker 2s infinite;
+} */
+
+.sun {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, 
+    #ffdd00 20%,   /* Bright yellow core */
+    #ff9900 40%,   /* Orange mid-layer */
+    #ff4500 60%,   /* Deep orange outer glow */
+    rgba(255, 101, 45, 0.5) 80%, /* Fading red-orange */
+    rgba(248, 27, 27, 0.104) 100%  /* Transparent outer glow */
+  );
+  background-size: 150% 250%;
+  animation: sun-pulse 10s infinite ease-in-out;
+  box-shadow: 0 0 50px rgba(255, 165, 0, 0.8);
 }
 
 .mercury {
@@ -32,4 +53,20 @@
 
 .mercury-circle:hover {
   transform: scale(1.3);
+}
+
+/* Pulsating animation */
+@keyframes sun-pulse {
+  0% {
+    background-size: 100% 100%;
+    opacity: 1;
+  }
+  50% {
+    background-size: 180% 130%;
+    opacity: 0.95;
+  }
+  100% {
+    background-size: 100% 100%;
+    opacity: 1;
+  }
 }

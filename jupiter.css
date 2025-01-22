@@ -1,0 +1,72 @@
+.mars {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: move-planet 2s forwards;
+}
+
+.mars-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to right,
+    #ff4646 30%,
+    #9a3636 50%,
+    #3b1c1c 70%
+  );
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.mars-circle:hover {
+  transform: scale(1.3);
+}
+
+.jupiter {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: zoom-in 2s forwards;
+}
+
+.jupiter-circle {
+  width: 293px;
+  height: 293px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to bottom,
+    #d8a47f 10%,  /* Light beige */
+    #b86e50 20%,  /* Light brown */
+    #8c3a2e 30%,  /* Dark brown */
+    #d8a47f 33%,  /* Light beige */
+    #b86e50 38%,  /* Light brown */
+    #d8a47f 52%,  /* Light beige */
+    #8c3a2e 60%,  /* Dark brown */
+    #d8a47f 70%,  /* Light beige */
+    #b86e50 80%,  /* Light brown */
+    #8c3a2e 90%   /* Dark brown */
+  );
+  background-size: 100% 200%;  /* Doubling the height to allow smooth animation */
+  animation: jupiter-motion 60s linear infinite; /* Animation applied */
+  box-shadow: 0 0 50px rgba(255, 165, 0, 0.8);
+  transition: transform 0.2s;
+}
+
+.jupiter-circle:hover {
+  transform: scale(1.3);
+}
+
+/* Keyframes to move the gradient background */
+@keyframes jupiter-motion {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+
