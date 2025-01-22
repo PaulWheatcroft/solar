@@ -1,35 +1,8 @@
-.mercury {
+.venus {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   animation: move-planet 2s forwards;
-}
-
-.mercury-circle {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-image: linear-gradient(
-    to right,
-    #ededed 40%,
-    #dcdcdc 50%,
-    #9b9b9b 60%
-  );
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.mercury-circle:hover {
-  transform: scale(1.3);
-}
-
-.venus {
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translateY(-50%);
-  opacity: 0;
-  animation: zoom-in 2s forwards;
 }
 
 .venus-circle {
@@ -42,10 +15,37 @@
     #c1a366 50%,
     #b59855 70%
   );
+  cursor: pointer;
   transition: transform 0.2s;
 }
 
 .venus-circle:hover {
+  transform: scale(1.3);
+}
+
+.earth {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: zoom-in 2s forwards;
+}
+
+.earth-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to right,
+    #469fff 30%,
+    #367e9a 50%,
+    #2c495d 70%
+  );
+  transition: transform 0.2s;
+}
+
+.earth-circle:hover {
   transform: scale(1.3);
 }
 
