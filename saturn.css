@@ -1,0 +1,109 @@
+.jupiter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: move-planet 2s forwards;
+}
+
+.jupiter-circle {
+  width: 293px;
+  height: 293px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to bottom,
+    #d8a47f 10%,  /* Light beige */
+    #b86e50 20%,  /* Light brown */
+    #8c3a2e 30%,  /* Dark brown */
+    #d8a47f 33%,  /* Light beige */
+    #b86e50 38%,  /* Light brown */
+    #d8a47f 52%,  /* Light beige */
+    #8c3a2e 60%,  /* Dark brown */
+    #d8a47f 70%,  /* Light beige */
+    #b86e50 80%,  /* Light brown */
+    #8c3a2e 90%   /* Dark brown */
+  );
+  background-size: 100% 200%;  /* Doubling the height to allow smooth animation */
+  animation: jupiter-motion 60s linear infinite; /* Animation applied */
+  box-shadow: 0 0 50px rgba(255, 165, 0, 0.8);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.jupiter-circle:hover {
+  transform: scale(1.3);
+}
+
+/* Position the entire Saturn container */
+.saturn {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  opacity: 0;
+  animation: zoom-in 2s forwards;
+  text-align: center;
+}
+
+/* Saturn's top half (front part of the planet) */
+.saturn-top-half {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 248px;
+  height: 124px; /* Half of the planet */
+  background: radial-gradient(circle at center, 
+    #d2b48c 30%,   /* Light brown center */
+    #c19a6b 60%,   /* Dark brown middle */
+    #a67c52 80%    /* Darker outer ring */
+  );
+  border-radius: 248px 248px 0 0; /* Top half of the circle */
+  transform: translate(-50%, -100%);
+  z-index: 3; /* In front of the ring */
+}
+
+/* Saturn's bottom half (behind the ring) */
+.saturn-bottom-half {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 248px;
+  height: 124px; /* Half of the planet */
+  background: radial-gradient(circle at center, 
+    #d2b48c 30%,   /* Light brown center */
+    #c19a6b 60%,   /* Dark brown middle */
+    #a67c52 80%    /* Darker outer ring */
+  );
+  border-radius: 0 0 248px 248px; /* Bottom half of the circle */
+  transform: translate(-50%, 0%);
+  z-index: 1; /* Behind the ring */
+}
+
+/* Saturn's rings */
+.saturn-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 50px;
+  background: radial-gradient(ellipse at center, 
+    rgba(200, 160, 110, 0.8) 20%,  
+    rgba(150, 100, 60, 0.8) 50%,
+    rgba(80, 50, 30, 0.5) 80%,    
+    rgba(0, 0, 0, 0) 100%          
+  );
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%) skewX(-20deg);
+  z-index: 2; /* Between the planet halves */
+}
+
+/* Keyframes to move the gradient background */
+@keyframes jupiter-motion {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+

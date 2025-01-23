@@ -43,9 +43,15 @@ body {
   right: 10%;
 }
 
+/* Styling the planet name */
 .planet-name {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
   color: #fff;
-  font-size: 12px;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
 }
 
 /* Modal hidden by default */
